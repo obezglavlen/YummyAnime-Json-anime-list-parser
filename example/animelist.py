@@ -12,10 +12,10 @@ def write_file(path, str):
 
 
 def create_list_by_list_id(list, list_id):
-	return [list[idx].replace(' ', '')
-					 .replace('"title":', '')
+	return [list[idx].replace('"title":', '')
 					 .replace(',', '')
 					 .replace('"', '')
+					 [5:]
 			   for idx in range(1, len(list))
 			   if f'"list_id": {list_id}' in list[idx - 1]]
 
