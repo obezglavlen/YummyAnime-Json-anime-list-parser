@@ -1,6 +1,9 @@
+import json
+
+
 def read_file(path):
 	with open(path, 'r', encoding='utf-8') as file:
-		return file.read().splitlines()
+		return json.dumps(json.load(file), indent=2, sort_keys=True, ensure_ascii=False).splitlines()
 
 
 def write_file(path, str):
